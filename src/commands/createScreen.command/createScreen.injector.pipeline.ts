@@ -27,7 +27,7 @@ export default async function createScreenInjector({
     )
     .injectImport({
       importName: `${screenName}Screen`,
-      source: `@src/screens/stacks/${navigatorName}/${screenName}/${screenName}.screen`,
+      source: `../../screens/stacks/${navigatorName}/${screenName}/${screenName}.screen`,
       isDefault: true,
     })
     .parse(`src/@types/navigation/${navigatorName}.d.ts`)
