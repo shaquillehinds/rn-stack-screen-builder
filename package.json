@@ -32,8 +32,6 @@
     "npm-pub": "npm publish --access public"
   },
   "dependencies": {
-    "@react-navigation/native": "^6.1.17",
-    "@react-navigation/stack": "^6.3.29",
     "chalk": "^5.3.0",
     "commander": "^11.0.0",
     "inquirer": "^9.2.10",
