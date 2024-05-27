@@ -1,5 +1,0 @@
-export default function {{ScreenName}}Controller(
-  props: {{NavigatorName}}StackScreenProps<'{{ScreenName}}'>,
-) {
-  return {};
-}

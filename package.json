@@ -1,6 +1,6 @@
 {
   "name": "@shaquillehinds/rn-stack-screen-builder",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Create and manipulate a react native navigator from the command line",
   "repository": {
     "type": "git",
@@ -8,7 +8,7 @@
   },
   "main": "dist/index.js",
   "bin": {
-    "nav-builder": "dist/index.bin.js"
+    "stack-builder": "dist/index.bin.js"
   },
   "author": {
     "name": "Shaquille Hinds",
