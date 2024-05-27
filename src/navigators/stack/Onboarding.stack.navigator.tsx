@@ -1,6 +1,5 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import GoogleSignUpScreen from "@src/screens/stacks/Onboarding/GoogleSignUp/GoogleSignUp.screen";
 import PhoneVerificaionScreen from "@src/screens/stacks/Onboarding/PhoneVerificaion/PhoneVerificaion.screen";
 import { NavigationContainer } from "@react-navigation/native";
 // import { theme } from '@utils/themes';
@@ -29,11 +28,6 @@ export default function OnboardingStackNavigator(
     //}}
     >
       <OnboardingStack.Navigator initialRouteName={props.initialRouteName}>
-        <OnboardingStack.Screen
-          options={{ headerShown: false }}
-          name="GoogleSignUp"
-          component={GoogleSignUpScreen}
-        />
         <OnboardingStack.Screen
           options={{ headerShown: false }}
           name="PhoneVerificaion"

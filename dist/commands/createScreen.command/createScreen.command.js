@@ -11,6 +11,7 @@ import { firstLetterCap } from "../../utils/algorithms.js";
 import createScreenInjector from "./createScreen.injector.pipeline.js";
 import checkFiles from "../../utils/fileChecker.js";
 import { requiredFiles } from "../../@types/index.js";
+import createScreenPrompt from "./createScreen.prompt.js";
 export default function createScreenCommand(program) {
     program
         .command("create-screen <name>")
@@ -19,8 +20,11 @@ export default function createScreenCommand(program) {
         .action((screenName, { navigator }) => __awaiter(this, void 0, void 0, function* () {
         checkFiles({ autoCreate: requiredFiles });
         screenName = firstLetterCap(screenName.trim());
-        if (!navigator)
-            throw new Error("The name of the navigator is required, e.g -n NameOfNavigator");
+        if (!navigator) {
+            navigator = yield createScreenPrompt.navigatorName();
+            if (!navigator)
+                throw new Error("The name of the navigator is required, e.g -n NameOfNavigator");
+        }
         const navigatorName = firstLetterCap(navigator.trim());
         yield createScreenInjector({ screenName, navigatorName });
         process.exit(0);

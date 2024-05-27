@@ -24,16 +24,6 @@ export default function createNavigatorInjector({ navigatorName, }) {
             position: "firstLine",
         })
             .injectDirectory(`src/screens/stacks/${navigatorName}`)
-            // .injectFileFromTemplate({
-            //   newFilePath: `src/navigators/stack/${navigatorName}.stack.navigator.tsx`,
-            //   templatePath: templatePath("StackNavigator"),
-            //   replaceKeywords: [{ keyword: "{{Name}}", replacement: navigatorName }],
-            // })
-            // .injectFileFromTemplate({
-            //   newFilePath: `src/@types/navigation/${navigatorName}.d.ts`,
-            //   templatePath: templatePath("StackParamList"),
-            //   replaceKeywords: [{ keyword: "{{Name}}", replacement: navigatorName }],
-            // })
             .finish();
     });
 }

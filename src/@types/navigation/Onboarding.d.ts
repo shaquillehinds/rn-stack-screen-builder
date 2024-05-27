@@ -1,5 +1,4 @@
 type OnboardingStackParamList = {
-  GoogleSignUp: undefined;
   PhoneVerificaion: undefined;
 };
 

@@ -12,8 +12,8 @@ const navigatorName = () => __awaiter(void 0, void 0, void 0, function* () {
     return (yield inquirer.prompt({
         name: "navigatorName",
         type: "input",
-        message: "Name of the navigator?",
+        message: "Name of the navigator this screen belongs to?",
     })).navigatorName;
 });
-const createNavigatorPrompt = { navigatorName };
-export default createNavigatorPrompt;
+const createScreenPrompt = { navigatorName };
+export default createScreenPrompt;

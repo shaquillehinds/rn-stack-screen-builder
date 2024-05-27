@@ -5,10 +5,10 @@ const navigatorName = async () =>
     await inquirer.prompt({
       name: "navigatorName",
       type: "input",
-      message: "Name of the navigator?",
+      message: "Name of the navigator this screen belongs to?",
     })
   ).navigatorName;
 
-const createNavigatorPrompt = { navigatorName };
+const createScreenPrompt = { navigatorName };
 
-export default createNavigatorPrompt;
+export default createScreenPrompt;

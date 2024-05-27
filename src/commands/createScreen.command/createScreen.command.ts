@@ -3,6 +3,7 @@ import { Command } from "commander";
 import createScreenInjector from "./createScreen.injector.pipeline";
 import checkFiles from "@src/utils/fileChecker";
 import { RequiredFiles, requiredFiles } from "@src/@types";
+import createScreenPrompt from "./createScreen.prompt";
 
 export default function createScreenCommand(program: Command) {
   program
@@ -12,10 +13,13 @@ export default function createScreenCommand(program: Command) {
     .action(async (screenName, { navigator }) => {
       checkFiles({ autoCreate: requiredFiles as unknown as RequiredFiles[] });
       screenName = firstLetterCap(screenName.trim());
-      if (!navigator)
-        throw new Error(
-          "The name of the navigator is required, e.g -n NameOfNavigator"
-        );
+      if (!navigator) {
+        navigator = await createScreenPrompt.navigatorName();
+        if (!navigator)
+          throw new Error(
+            "The name of the navigator is required, e.g -n NameOfNavigator"
+          );
+      }
       const navigatorName = firstLetterCap(navigator.trim());
       await createScreenInjector({ screenName, navigatorName });
       process.exit(0);
