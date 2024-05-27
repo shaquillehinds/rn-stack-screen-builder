@@ -1,6 +1,6 @@
 {
   "name": "@shaquillehinds/rn-stack-screen-builder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create and manipulate a react native navigator from the command line",
   "repository": {
     "type": "git",
