@@ -1,0 +1,3 @@
+export declare const templatePath: (name: string) => string;
+export declare const reducersTemplate = "import { combineReducers } from 'redux';\n\nconst reducers = combineReducers({ });\n\nexport type State = ReturnType<typeof reducers>;\n\nexport default reducers;\n";
+export declare const storeTemplate = "import { legacy_createStore as createStore, applyMiddleware } from 'redux';\nimport thunk from 'redux-thunk';\nimport reducers, { State } from './reducers';\n\nexport * as actionCreators from './actionCreators';\n\nexport const store = createStore(\n  reducers,\n  {},\n  applyMiddleware<{}, State>(thunk),\n);\n\nexport type Store = typeof store;\nexport type StoreDispatch = typeof store.dispatch;\n";

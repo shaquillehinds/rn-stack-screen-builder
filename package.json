@@ -1,0 +1,49 @@
+{
+  "name": "@shaquillehinds/rn-nvaigator-screen-builder",
+  "version": "0.0.0",
+  "description": "Create and manipulate a react native navigator from the command line",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shaquillehinds/rn-navigator-screen-builder"
+  },
+  "main": "dist/index.js",
+  "bin": {
+    "nav-builder": "dist/index.bin.js"
+  },
+  "author": {
+    "name": "Shaquille Hinds",
+    "email": "shaqdulove@gmail.com",
+    "url": "https://github.com/shaquillehinds"
+  },
+  "type": "module",
+  "license": "ISC",
+  "rootDir": "src",
+  "private": false,
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "prebuild": "rm -rf src/@types/navigation && rm -rf src/navigators && rm -rf src/screens",
+    "build": "rm -rf dist && tsc -p ./ && tsc-alias -p ./tsconfig.json && cp -r src/templates dist && chmod +x dist/index.bin.js",
+    "build-exec-bin": "yarn build && node dist/index.bin.js",
+    "exec-bin": "node dist/index.bin.js",
+    "prenpm-pub": "yarn build",
+    "npm-pub": "npm publish --access public"
+  },
+  "dependencies": {
+    "@react-navigation/native": "^6.1.17",
+    "@react-navigation/stack": "^6.3.29",
+    "chalk": "^5.3.0",
+    "commander": "^11.0.0",
+    "inquirer": "^9.2.10",
+    "tscodeinject": "^1.3.0"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^9.0.3",
+    "@types/node": "^20.4.10",
+    "ts-node": "^10.8.1",
+    "tsc-alias": "^1.8.7",
+    "typescript": "^4.7.3"
+  }
+}

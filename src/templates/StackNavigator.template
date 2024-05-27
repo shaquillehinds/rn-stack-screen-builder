@@ -1,0 +1,33 @@
+import React from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+// import { theme } from '@utils/themes';
+
+const {{Name}}Stack = createStackNavigator<{{Name}}StackParamList>();
+
+interface {{Name}}StackNavigatorProps {
+  initialRouteName: keyof {{Name}}StackParamList;
+}
+
+export default function {{Name}}StackNavigator(
+  props: {{Name}}StackNavigatorProps,
+) {
+  return (
+    <NavigationContainer
+      //theme={{
+      //  dark: theme.mode === 'dark',
+      //  colors: {
+      //    background: theme.background,
+      //    border: theme.background,
+      //    card: theme.background,
+      //    notification: theme.primary.dark,
+      //    primary: theme.primary.dark,
+      //    text: theme.typeface.primary,
+      //  },
+      //}}
+      >
+      <{{Name}}Stack.Navigator initialRouteName={props.initialRouteName}>
+      </{{Name}}Stack.Navigator>
+    </NavigationContainer>
+  );
+}

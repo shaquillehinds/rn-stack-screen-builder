@@ -1,0 +1,9 @@
+type {{Name}}StackParamList = {
+};
+
+type {{Name}}StackScreenProps<T extends keyof {{Name}}StackParamList> =
+  import('@react-navigation/stack').StackScreenProps<
+    {{Name}}StackParamList,
+    T,
+    '{{Name}}Stack'
+  >;
